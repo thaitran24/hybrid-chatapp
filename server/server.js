@@ -13,6 +13,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 function notValidStr(str) {
+    if (str == '')
+        return true;
+    else if (!str)
+        return true;
     return str.trim().length === 0;
 }
 
@@ -108,6 +112,16 @@ app.get('/api/register', (req, res) => {
             name: '',
             username: '',
             error: "Invalid name"
+        });
+    }
+
+    if (notValidStr(req.query.password)) {
+        res.send({
+            success: false,
+            id: '',
+            name: '',
+            username: '',
+            error: "Invalid password"
         });
     }
 
