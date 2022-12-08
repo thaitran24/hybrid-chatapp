@@ -5,7 +5,7 @@ const app = express();
 const server = http.createServer(app);
 const { ExpressPeerServer } = require('peer');
 const PORT = process.env.PORT || "8000";
-const HOST = "192.168.1.15";
+const HOST = "localhost";
 
 const customGenerationFunction = () => (Math.random().toString(36) + '0000000000000000000').substr(2, 16);
 

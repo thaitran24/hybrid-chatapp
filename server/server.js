@@ -6,7 +6,7 @@ const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
 const PORT = 8001;
-const HOST = "192.168.1.15";
+const HOST = "localhost";
 
 app.use(cors());
 app.use(express.json());

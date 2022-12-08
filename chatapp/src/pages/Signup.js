@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import '../css/login.css'
 import Axios from "axios";
 
-const HOST = "http://192.168.1.15:";
+const HOST = "http://localhost:";
 const PORT = 8001;
 
 function SignUp() {

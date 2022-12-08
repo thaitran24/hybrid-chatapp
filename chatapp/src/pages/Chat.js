@@ -6,9 +6,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../css/chatbar.css'
 
-const HOST = "http://192.168.1.15:";
+const HOST = "http://localhost:";
 const PORT = 8001;
-const PEER_HOST = "192.168.1.15"
+const PEER_HOST = "localhost"
 const PEER_PORT = 8000;
 
 var peer = null;
@@ -134,12 +134,6 @@ function Chat() {
             document.getElementById("multiple-file").value = null;
         }
     }, [files])
-
-    useEffect(() => {
-        if (largeFiles.length > 0) {
-            
-        }
-    })
 
     useEffect(() => {
         if (peer.id !== null && user) {
@@ -294,7 +288,7 @@ function Chat() {
                 friendVideo.play();
             });
         });
-      }
+    }
 
     function join() {
         peer.on('connection', function (c) {
@@ -760,7 +754,7 @@ function Chat() {
 
                     <div className="custom-file">
                         <input type="file" className="custom-file-input" id="customFile" onChange={handleLargeFile}/>
-                        <label className="custom-file-label" for="customFile">{largeFileMsg}</label>
+                        <label className="custom-file-label" htmlFor="customFile">{largeFileMsg}</label>
                     </div>
                 </div>
             </div>
